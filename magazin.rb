@@ -17,7 +17,8 @@ break if name == "Стоп"
   price = price.to_f
   count = count.to_i
 
-  shop_hash.merge!(name => { count: count, price: price })
+#  shop_hash.merge!(name => { count: count, price: price })
+  shop_hash[name] = {count: count, price: price}
 
 end
 

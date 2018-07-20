@@ -10,7 +10,8 @@ alphabet.each_with_index do |value,index|
   a = []
   # .scan возвращает пустой массив если не находит совпадений
   if a != value.scan(/[aeouiy]/)
-   vowels_hash.merge!(value.scan(/[aeouiy]/)[0] => index)    
+  # vowels_hash.merge!(value.scan(/[aeouiy]/)[0] => index)
+  vowels_hash[value] = index    
   end
 end
 
