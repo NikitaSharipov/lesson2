@@ -17,7 +17,7 @@ break if name == "Стоп"
   price = price.to_f
   count = count.to_i
 
-  shop_hash.merge!(name => { count => price })
+  shop_hash.merge!(name => { count: count, price: price })
 
 end
 
@@ -25,17 +25,16 @@ puts shop_hash
 
 sum = 0
 gen_sum = 0
+
 shop_hash.each do |k,v| 
     print k
     print " "
     print v
     print " "
-  v.each do |key,value|
-    sum = key * value
+    puts sum = v[:count] * v[:price]
     gen_sum += sum
-    puts sum
-  end
 end
+
 
 print "Общая сумма покупок: "
 puts gen_sum

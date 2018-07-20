@@ -6,13 +6,12 @@ alphabet = alphabet.to_a
 
 i = 0
 
-for letter in alphabet
+alphabet.each_with_index do |value,index|
   a = []
   # .scan возвращает пустой массив если не находит совпадений
-  if a != alphabet[i].scan(/[aeouiy]/)
-   vowels_hash.merge!(alphabet[i].scan(/[aeouiy]/) => i+1)    
+  if a != value.scan(/[aeouiy]/)
+   vowels_hash.merge!(value.scan(/[aeouiy]/)[0] => index)    
   end
-  i += 1
 end
 
 vowels_hash.each do |key, value|
